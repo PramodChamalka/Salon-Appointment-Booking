@@ -56,7 +56,9 @@ public class UserController {
             throw new Exception("User not exist with id "+id);
         }
 
+        User dltUser = userOtp.get();
+
         userRepository.deleteById(userOtp.get().getId());
-        return "User"+ id+ " "+" deleted successfully";
+        return "User '" + dltUser.getFullName() + "' with ID " + id + " deleted successfully!";
     }
 }
